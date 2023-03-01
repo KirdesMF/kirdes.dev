@@ -26,6 +26,7 @@ export default function Index() {
         >
           <ElasticGrid />
         </div>
+
         <h1 className="mb-[calc(9rem+70px)] mt-36 max-w-[18ch] text-center text-4xl font-900 color-neutral md:mb-[calc(12rem+70px)] md:mt-48 md:text-6xl">
           Creating digital experiences with passion and purpose.
         </h1>

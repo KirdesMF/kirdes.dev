@@ -19,7 +19,7 @@ export function CardStatus(props: Props) {
         <span
           className={clsx("block rounded-full w-2 h-2", colors[props.status])}
         />
-        <p className="text-xs font-100 capitalize">{props.status}</p>
+        <p className="text-xs font-100 capitalize">status: {props.status}</p>
       </div>
     </article>
   );
