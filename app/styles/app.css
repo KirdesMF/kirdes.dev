@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "Inter";
+  src: local("Inter"),
+    url("/fonts/Inter.var.woff2") format("woff2") tech("variations");
+  src: local("Inter"),
+    url("/fonts/Inter.var.woff2") format("woff2 supports variations"),
+    url("/fonts/Inter.var.woff2") format("woff2-variations");
+  font-weight: 100 1000;
+  font-stretch: 25% 151%;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+.custom-grid {
+  display: grid;
+  grid-template-columns: 60px 1px 1fr 1px 60px;
+  grid-template-rows: 70px 1px minmax(35rem, 1fr) 1px 70px;
+}
+
+.radial-gradient {
+  background: radial-gradient(
+    circle at center,
+    transparent 20%,
+    hsla(0, 100%, 100%, 0.3) 60%,
+    transparent
+  );
+}
