@@ -3,6 +3,7 @@ import { BurgerIcon } from "./icons/burger";
 import { GithubIcon } from "./icons/github";
 import { TwitterIcon } from "./icons/twitter";
 import { clsx } from "clsx";
+import { LinkedInIcon } from "./icons/linkedin";
 
 const links = [
   { href: "/", label: "Home" },
@@ -15,6 +16,7 @@ const links = [
 const socials = [
   { href: "", label: "GitHub", icon: GithubIcon },
   { href: "", label: "Twitter", icon: TwitterIcon },
+  { href: "", label: "Linkedin", icon: LinkedInIcon },
 ];
 
 function MainMenu() {
@@ -41,7 +43,7 @@ function MainMenu() {
 
 function SocialMenu() {
   return (
-    <ul className="flex items-center gap-x-4 color-gray-200/25">
+    <ul className="flex items-center gap-x-2 color-gray-200/25">
       {socials.map((link) => {
         const Icon = link.icon;
         return (

@@ -32,3 +32,35 @@ export function CardCurrentJob() {
     </article>
   );
 }
+
+export function CardContact() {
+  return (
+    <article className="from-neutral-900 to-black bg-gradient-to-b px-4 py-2">
+      <div className="flex items-center gap-4"></div>
+    </article>
+  );
+}
+
+export function CardSkills() {
+  return (
+    <article className="from-neutral-900 to-black bg-gradient-to-b px-4 py-2">
+      <div className="flex items-center gap-4"></div>
+    </article>
+  );
+}
+
+export function CardSpotify() {
+  return (
+    <article className="from-neutral-900 to-black bg-gradient-to-b px-4 py-2">
+      <div className="flex items-center gap-4"></div>
+    </article>
+  );
+}
+
+export function CardInterests() {
+  return (
+    <article className="from-neutral-900 to-black bg-gradient-to-b px-4 py-2">
+      <div className="flex items-center gap-4"></div>
+    </article>
+  );
+}

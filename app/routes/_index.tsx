@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import { ElasticGrid } from "~/components/canvas/elastic-grid";
+import { CanvasParticle } from "~/components/canvas/particles";
 import { CardStatus } from "~/components/card";
 
 // TODO: move this to css
@@ -22,9 +23,13 @@ export default function Index() {
         <div
           role="presentation"
           aria-hidden
-          className={clsx(...beforeStyles, "absolute inset-0")}
+          className={clsx(
+            ...beforeStyles,
+            "absolute inset-0 grid grid-cols-1 grid-rows-1"
+          )}
         >
-          <ElasticGrid />
+          <CanvasParticle className="grid-col-[1/-1] grid-row-[1/-1]" />
+          <ElasticGrid className="grid-col-[1/-1] grid-row-[1/-1] bg-transparent" />
         </div>
 
         <h1 className="mb-[calc(9rem+70px)] mt-36 max-w-[18ch] text-center text-4xl font-900 color-neutral md:mb-[calc(12rem+70px)] md:mt-48 md:text-6xl">
@@ -67,6 +72,8 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      <div className="h-[500px] w-[500px]"></div>
     </main>
   );
 }

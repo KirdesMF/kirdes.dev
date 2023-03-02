@@ -73,16 +73,8 @@ function createGrid(options: Grid) {
  * @param canvas
  */
 function resizeCanvas(canvas: HTMLCanvasElement) {
-  const ctx = canvas.getContext("2d");
-  const dpr = devicePixelRatio || 1;
-
-  const width = canvas.parentElement?.clientWidth || 100;
-  const height = canvas.parentElement?.clientHeight || 100;
-
-  canvas.width = width * dpr;
-  canvas.height = height * dpr;
-
-  ctx?.scale(dpr, dpr);
+  canvas.width = canvas.parentElement?.clientWidth || 100;
+  canvas.height = canvas.parentElement?.clientHeight || 100;
 }
 
 /**
@@ -104,7 +96,8 @@ function draw(canvas: HTMLCanvasElement, grid: Path[]) {
     const attribute = setPathAttribute(line);
     const path = new Path2D(attribute);
 
-    ctx.lineWidth = 1;
+    ctx.lineWidth = 1.5;
+    ctx.globalAlpha = 0.75;
     ctx.strokeStyle = "rgba(255, 255, 255, 0.3)";
     ctx.setLineDash([5, 5]);
     ctx.stroke(path);
@@ -116,7 +109,7 @@ function draw(canvas: HTMLCanvasElement, grid: Path[]) {
 /**
  * Canvas Grid of elastic lines
  */
-export function ElasticGrid() {
+export function ElasticGrid({ className }: { className?: string }) {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const grid = useRef<Path[]>([]);
   const maxGrabDistance = 50;
@@ -221,6 +214,7 @@ export function ElasticGrid() {
     if (!canvas) return;
 
     init();
+    console.log(grid.current);
     gsap.ticker.add(() => draw(canvas, grid.current));
 
     return () => gsap.ticker.remove(draw);
@@ -241,7 +235,7 @@ export function ElasticGrid() {
   return (
     <canvas
       ref={canvasRef}
-      className="h-full w-full"
+      className={className}
       onMouseMove={onMouseMove}
       onMouseLeave={onMouseLeave}
     ></canvas>
